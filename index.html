@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="scoreBoard" class="score-board">
+    <div class="game-title">
+      ROCK<br>PAPER<br>SCISSORS
+    </div>
+    <div class="score-box">
+      <div>
+        <p>COMPUTER SCORE</p>
+        <h1 id="computerScore">0</h1>
+      </div>
+      <div>
+        <p>YOUR SCORE</p>
+        <h1 id="userScore">0</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-area" id="gameArea">
+    <div class="triangle">
+      <div class="line line-top"></div>
+      <div class="line line-left"></div>
+      <div class="line line-right"></div>
+
+      <button class="choice rock" onclick="play('rock')">✊</button>
+      <button class="choice scissors" onclick="play('scissors')">✌️</button>
+      <button class="choice paper" onclick="play('paper')">✋</button>
+    </div>
+  </div>
+
+  <div class="result-area hidden" id="resultArea">
+
+    <div class="picked">
+      <p>YOU PICKED</p>
+      <div class="ring" id="userRing">
+        <div class="choice-display" id="userPick"></div>
+      </div>
+    </div>
+
+    <div class="result-text">
+      <h1 id="resultText"></h1>
+      <p>AGAINST PC</p>
+      <button onclick="playAgain()">PLAY AGAIN</button>
+    </div>
+
+    <div class="picked">
+      <p>PC PICKED</p>
+      <div class="ring" id="pcRing">
+        <div class="choice-display" id="pcPick"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="next-btn hidden" id="nextBtn" onclick="showHurray()">NEXT</button>
+
+  <div class="hurray hidden" id="hurray">
+    <div class="stars">
+      <span>★</span><span>★</span><span>★</span>
+      <span>★</span><span>★</span><span>★</span>
+    </div>
+    <div class="trophy">🏆</div>
+    <h1>HURRAY!!</h1>
+    <p>YOU WON THE GAME</p>
+    <button onclick="resetGame()">PLAY AGAIN</button>
+  </div>
+
+  <button class="rules-btn" onclick="toggleRules()">RULES</button>
+
+  <div class="rules-popup hidden" id="rules">
+    <button class="close-btn" onclick="toggleRules()">✖</button>
+    <h2>Game Rules</h2>
+    <ul>
+      <li><span>Rock beats scissors, scissors beat paper, paper beats rock</span></li>
+      <li><span>If both players choose the same, play again</span></li>
+      <li><span>Winner gets one point</span></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

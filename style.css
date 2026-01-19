@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    background: #8cc461;
+    height: 100vh;
+    color: white;
+  }
+  
+  .score-board {
+    width: 700px;
+    margin: 30px auto;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .game-title {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  
+  .score-box {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .score-box div {
+    background: white;
+    color: black;
+    padding: 10px;
+    width: 120px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .score-box h1 {
+    margin: 5px 0 0;
+    font-size: 40px;
+  }
+  
+  .game-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+  }
+  
+  .triangle {
+    width: 300px;
+    height: 260px;
+    position: relative;
+  }
+  
+  .line {
+    position: absolute;
+    background: #1f3d1b;
+    height: 10px;
+    border-radius: 10px;
+  }
+  
+  .line-top {
+    width: 140px;
+    top: 45px;
+    left: 80px;
+  }
+  
+  .line-left {
+    width: 150px;
+    top: 120px;
+    left: 40px;
+    transform: rotate(60deg);
+  }
+  
+  .line-right {
+    width: 150px;
+    top: 120px;
+    right: 40px;
+    transform: rotate(-60deg);
+  }
+  
+  .choice {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 12px solid;
+    background: white;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  .rock { border-color: #0074b6; top: 0; left: 0; }
+  .scissors { border-color: #bd00ff; top: 0; right: 0; }
+  .paper { border-color: #ffa943; bottom: 0; left: 50%; transform: translateX(-50%); }
+  
+  .result-area {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+    margin-top: 70px;
+  }
+  
+  .picked {
+    text-align: center;
+  }
+  
+  .ring {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .win-ring {
+    box-shadow: 0 0 0 20px rgba(46,154,37,0.5),
+                0 0 0 40px rgba(46,154,37,0.3);
+  }
+  
+  .choice-display {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+  }
+  
+  .result-text h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .result-text button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .next-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 120px;
+    padding: 8px 18px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .hurray {
+    text-align: center;
+    margin-top: 120px;
+  }
+  
+  .trophy {
+    font-size: 120px;
+  }
+  
+  .stars {
+    position: absolute;
+    width: 100%;
+    top: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 30px;
+    opacity: 0.6;
+  }
+  
+  .hurray h1 {
+    font-size: 60px;
+    margin: 20px 0 10px;
+  }
+  
+  .hurray p {
+    font-size: 24px;
+  }
+  
+  .rules-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+  }
+  
+  .rules-popup {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 260px;
+    background: #004429;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 15px;
+  }
+  
+  .rules-popup li {
+    color: #ffd600;
+    list-style: square;
+  }
+  
+  .rules-popup span {
+    color: white;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
