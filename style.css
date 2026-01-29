@@ -10,6 +10,7 @@ body {
   color: white;
 }
 
+/* SCORE BOARD */
 
 .score-board {
   width: 800px;
@@ -51,17 +52,15 @@ body {
   font-size: 14px;
   letter-spacing: 1px;
   text-align: center;
-  line-height: 1.2;
   font-weight: 600;
 }
-
 
 .score-card h1 {
   margin: 5px 0 0;
   font-size: 48px;
 }
 
-/* ================= GAME AREA ================= */
+/* GAME AREA */
 
 .game-area {
   display: flex;
@@ -107,7 +106,7 @@ body {
 .scissors { border-color: #bd00ff; top: 0; right: 0; }
 .paper { border-color: #ffa943; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-
+/* RESULT */
 
 .result-area {
   display: flex;
@@ -127,7 +126,6 @@ body {
   letter-spacing: 1px;
 }
 
-
 .ring {
   width: 172px;
   height: 172px;
@@ -142,7 +140,6 @@ body {
 .ring.paper { border-color: #ffa943; }
 .ring.scissors { border-color: #bd00ff; }
 
-
 .ring img {
   width: 140px;
   height: 140px;
@@ -151,37 +148,13 @@ body {
   padding: 36px;
 }
 
-
 .win-ring {
   box-shadow:
     0 0 0 20px rgba(46,154,37,0.5),
     0 0 0 40px rgba(46,154,37,0.3);
 }
 
-.result-text {
-  text-align: center;
-}
-
-.result-text h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-.result-text p {
-  margin-bottom: 18px;
-  letter-spacing: 1px;
-}
-
-.result-text button {
-  padding: 12px 30px;
-  border-radius: 10px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-
+/* BUTTONS */
 
 .next-btn {
   position: fixed;
@@ -194,58 +167,6 @@ body {
   border-radius: 8px;
 }
 
-
-
-.hurray {
-  position: relative;
-  height: calc(100vh - 120px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.hurray-stars {
-  position: absolute;
-  width: 504px;
-  height: 297px;
-  top: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0.83;
-  z-index: 1;
-}
-
-.trophy {
-  width: 180px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  z-index: 2;
-}
-
-.hurray h1 {
-  font-size: 64px;
-  margin: 10px 0 5px;
-  z-index: 2;
-}
-
-.hurray p {
-  font-size: 24px;
-  margin-bottom: 25px;
-  z-index: 2;
-}
-
-.hurray button {
-  padding: 12px 28px;
-  border-radius: 10px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  z-index: 2;
-}
-
-
-
 .rules-btn {
   position: fixed;
   bottom: 20px;
@@ -257,28 +178,71 @@ body {
   border-radius: 8px;
 }
 
+/* HURRAY */
+
+.hurray {
+  position: relative;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* RULES POPUP (FIXED AS PER FIGMA) */
+
 .rules-popup {
   position: fixed;
   bottom: 90px;
   right: 20px;
-  width: 260px;
+  width: 300px;
   background: #004429;
   border: 2px solid white;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.rules-popup h2 {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.rules-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rules-popup li {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.rules-popup li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #ffd600;
+  margin-top: 6px;
 }
 
 .close-btn {
   position: absolute;
-  top: -15px;
-  right: -15px;
+  top: -16px;
+  right: -16px;
+  width: 32px;
+  height: 32px;
   background: red;
   color: white;
   border-radius: 50%;
-  border: none;
-  width: 30px;
-  height: 30px;
+  border: 3px solid white;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .hidden {

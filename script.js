@@ -1,8 +1,8 @@
 let userScore = Number(localStorage.getItem("userScore")) || 0;
 let computerScore = Number(localStorage.getItem("computerScore")) || 0;
 
-userScoreEl = document.getElementById("userScore");
-computerScoreEl = document.getElementById("computerScore");
+const userScoreEl = document.getElementById("userScore");
+const computerScoreEl = document.getElementById("computerScore");
 
 userScoreEl.innerText = userScore;
 computerScoreEl.innerText = computerScore;
@@ -60,9 +60,9 @@ function showResult(user, pc, result) {
     return;
   }
 
+  resultText.innerText = result;
   resultSub.innerText = "AGAINST PC";
   resultBtn.innerText = "PLAY AGAIN";
-  resultText.innerText = result;
 
   if (result === "YOU WIN") {
     userRing.classList.add("win-ring");
