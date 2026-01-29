@@ -1,8 +1,11 @@
 let userScore = Number(localStorage.getItem("userScore")) || 0;
 let computerScore = Number(localStorage.getItem("computerScore")) || 0;
 
-document.getElementById("userScore").innerText = userScore;
-document.getElementById("computerScore").innerText = computerScore;
+userScoreEl = document.getElementById("userScore");
+computerScoreEl = document.getElementById("computerScore");
+
+userScoreEl.innerText = userScore;
+computerScoreEl.innerText = computerScore;
 
 function toggleRules() {
   document.getElementById("rules").classList.toggle("hidden");
@@ -10,74 +13,80 @@ function toggleRules() {
 
 function play(userChoice) {
   const choices = ["rock", "paper", "scissors"];
-  const computerChoice = choices[Math.floor(Math.random() * 3)];
+  const pcChoice = choices[Math.floor(Math.random() * 3)];
 
-  let result;
+  let result = "TIE UP";
 
-  if (userChoice === computerChoice) {
-    result = "TIE UP";
-  } else if (
-    (userChoice === "rock" && computerChoice === "scissors") ||
-    (userChoice === "paper" && computerChoice === "rock") ||
-    (userChoice === "scissors" && computerChoice === "paper")
-  ) {
-    result = "YOU WIN";
-    userScore++;
-  } else {
-    result = "YOU LOST";
-    computerScore++;
+  if (userChoice !== pcChoice) {
+    const win =
+      (userChoice === "rock" && pcChoice === "scissors") ||
+      (userChoice === "paper" && pcChoice === "rock") ||
+      (userChoice === "scissors" && pcChoice === "paper");
+
+    if (win) {
+      result = "YOU WIN";
+      userScore++;
+    } else {
+      result = "YOU LOST";
+      computerScore++;
+    }
   }
 
   localStorage.setItem("userScore", userScore);
   localStorage.setItem("computerScore", computerScore);
 
-  document.getElementById("userScore").innerText = userScore;
-  document.getElementById("computerScore").innerText = computerScore;
+  userScoreEl.innerText = userScore;
+  computerScoreEl.innerText = computerScore;
 
-  showResult(userChoice, computerChoice, result);
+  showResult(userChoice, pcChoice, result);
 }
 
 function showResult(user, pc, result) {
-  document.getElementById("gameArea").classList.add("hidden");
-  document.getElementById("resultArea").classList.remove("hidden");
+  gameArea.classList.add("hidden");
+  resultArea.classList.remove("hidden");
 
-  document.getElementById("userPick").innerText = symbol(user);
-  document.getElementById("pcPick").innerText = symbol(pc);
-  document.getElementById("resultText").innerText = result;
+  userPick.src = `assets/${user}.svg`;
+  pcPick.src = `assets/${pc}.svg`;
 
-  document.getElementById("userRing").className = "ring";
-  document.getElementById("pcRing").className = "ring";
-  document.getElementById("nextBtn").classList.add("hidden");
+  userRing.className = `ring ${user}`;
+  pcRing.className = `ring ${pc}`;
+
+  nextBtn.classList.add("hidden");
+
+  if (result === "TIE UP") {
+    resultText.innerText = "TIE UP";
+    resultSub.innerText = "";
+    resultBtn.innerText = "REPLAY";
+    return;
+  }
+
+  resultSub.innerText = "AGAINST PC";
+  resultBtn.innerText = "PLAY AGAIN";
+  resultText.innerText = result;
 
   if (result === "YOU WIN") {
-    document.getElementById("userRing").classList.add("win-ring");
-    document.getElementById("nextBtn").classList.remove("hidden");
+    userRing.classList.add("win-ring");
+    nextBtn.classList.remove("hidden");
   }
 
   if (result === "YOU LOST") {
-    document.getElementById("pcRing").classList.add("win-ring");
+    pcRing.classList.add("win-ring");
   }
 }
 
-function symbol(choice) {
-  if (choice === "rock") return "✊";
-  if (choice === "paper") return "✋";
-  return "✌️";
-}
-
 function playAgain() {
-  document.getElementById("resultArea").classList.add("hidden");
-  document.getElementById("gameArea").classList.remove("hidden");
+  resultArea.classList.add("hidden");
+  gameArea.classList.remove("hidden");
 }
 
 function showHurray() {
-  document.getElementById("resultArea").classList.add("hidden");
-  document.getElementById("scoreBoard").classList.add("hidden");
-  document.getElementById("hurray").classList.remove("hidden");
+  resultArea.classList.add("hidden");
+  scoreBoard.classList.add("hidden");
+  hurray.classList.remove("hidden");
 }
 
 function resetGame() {
-  document.getElementById("hurray").classList.add("hidden");
-  document.getElementById("scoreBoard").classList.remove("hidden");
-  document.getElementById("gameArea").classList.remove("hidden");
+  hurray.classList.add("hidden");
+  scoreBoard.classList.remove("hidden");
+  gameArea.classList.remove("hidden");
 }
