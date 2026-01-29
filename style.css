@@ -10,7 +10,7 @@ body {
   color: white;
 }
 
-/* SCORE BOARD */
+/* ================= SCORE BOARD ================= */
 
 .score-board {
   width: 800px;
@@ -60,7 +60,7 @@ body {
   font-size: 48px;
 }
 
-/* GAME AREA */
+/* ================= GAME AREA ================= */
 
 .game-area {
   display: flex;
@@ -81,9 +81,25 @@ body {
   border-radius: 10px;
 }
 
-.line-top { width: 140px; top: 45px; left: 80px; }
-.line-left { width: 150px; top: 120px; left: 40px; transform: rotate(60deg); }
-.line-right { width: 150px; top: 120px; right: 40px; transform: rotate(-60deg); }
+.line-top {
+  width: 140px;
+  top: 45px;
+  left: 80px;
+}
+
+.line-left {
+  width: 150px;
+  top: 120px;
+  left: 40px;
+  transform: rotate(60deg);
+}
+
+.line-right {
+  width: 150px;
+  top: 120px;
+  right: 40px;
+  transform: rotate(-60deg);
+}
 
 .choice {
   width: 96px;
@@ -102,11 +118,26 @@ body {
   width: 44px;
 }
 
-.rock { border-color: #0074b6; top: 0; left: 0; }
-.scissors { border-color: #bd00ff; top: 0; right: 0; }
-.paper { border-color: #ffa943; bottom: 0; left: 50%; transform: translateX(-50%); }
+.rock {
+  border-color: #0074b6;
+  top: 0;
+  left: 0;
+}
 
-/* RESULT */
+.scissors {
+  border-color: #bd00ff;
+  top: 0;
+  right: 0;
+}
+
+.paper {
+  border-color: #ffa943;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ================= RESULT AREA ================= */
 
 .result-area {
   display: flex;
@@ -136,9 +167,17 @@ body {
   align-items: center;
 }
 
-.ring.rock { border-color: #0074b6; }
-.ring.paper { border-color: #ffa943; }
-.ring.scissors { border-color: #bd00ff; }
+.ring.rock {
+  border-color: #0074b6;
+}
+
+.ring.paper {
+  border-color: #ffa943;
+}
+
+.ring.scissors {
+  border-color: #bd00ff;
+}
 
 .ring img {
   width: 140px;
@@ -150,11 +189,40 @@ body {
 
 .win-ring {
   box-shadow:
-    0 0 0 20px rgba(46,154,37,0.5),
-    0 0 0 40px rgba(46,154,37,0.3);
+    0 0 0 20px rgba(46, 154, 37, 0.5),
+    0 0 0 40px rgba(46, 154, 37, 0.3);
 }
 
-/* BUTTONS */
+/* ================= RESULT TEXT & BUTTON ================= */
+
+.result-text {
+  text-align: center;
+}
+
+.result-text h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.result-text p {
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+/* PLAY AGAIN BUTTON – FIXED EVERYWHERE */
+.result-text button {
+  width: 174px;
+  height: 44px;
+  border-radius: 9px;
+  border: 2px solid white;
+  background: white;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= NEXT BUTTON ================= */
 
 .next-btn {
   position: fixed;
@@ -165,7 +233,60 @@ body {
   color: white;
   padding: 8px 18px;
   border-radius: 8px;
+  cursor: pointer;
 }
+
+/* ================= HURRAY PAGE (FIGMA FIXED) ================= */
+
+.hurray {
+  position: relative;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hurray-stars {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 504px;
+  opacity: 0.85;
+}
+
+.trophy {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.hurray h1 {
+  font-size: 64px;
+  margin: 10px 0 5px;
+  letter-spacing: 2px;
+}
+
+.hurray p {
+  font-size: 24px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.hurray button {
+  width: 174px;
+  height: 44px;
+  border-radius: 9px;
+  border: 2px solid white;
+  background: white;
+  color: #6b6b6b;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* ================= RULES ================= */
 
 .rules-btn {
   position: fixed;
@@ -176,20 +297,8 @@ body {
   color: white;
   padding: 8px 18px;
   border-radius: 8px;
+  cursor: pointer;
 }
-
-/* HURRAY */
-
-.hurray {
-  position: relative;
-  height: calc(100vh - 120px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* RULES POPUP (FIXED AS PER FIGMA) */
 
 .rules-popup {
   position: fixed;
@@ -244,6 +353,8 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
+
+/* ================= UTILS ================= */
 
 .hidden {
   display: none;
